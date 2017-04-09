@@ -150,3 +150,4 @@ void minPrim(const int mVertax, const int mStart)
     
     cout << mSum << endl;
 }
+.
