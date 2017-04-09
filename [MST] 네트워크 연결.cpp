@@ -66,3 +66,87 @@ int main(void)
 
 	return 0;
 }
+
+
+#2
+#include <set>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+/* Define */
+#define SIZE 1001
+#define INF 9999999L
+#define CHK -1
+
+/* intager Array */
+int mAdj[SIZE][SIZE] = {0,};
+
+/* Function Declare */
+void minPrim(const int mVertax, const int mStart);
+
+int main(void)
+{
+    /* Integer */
+    int mVertax = 0, mEdge = 0;
+    cin >> mVertax >> mEdge;
+    
+    /* Init INF Array */
+    for (int ii = 0; ii <= mVertax; ii++)
+        for (int jj = 0; jj <= mVertax; jj++) { mAdj[ii][jj] = INF; }
+    
+    /* Input Edge-Weight */
+    for (int ii = 0; ii < mEdge; ii++)
+    {
+        int mEdge1 = 0, mEdge2 = 0, mWeight = 0;
+        cin >> mEdge1 >> mEdge2 >> mWeight;
+        
+        mAdj[mEdge1][mEdge2] = mAdj[mEdge2][mEdge1] = mWeight;
+    }
+    
+    minPrim(mVertax, 1);
+    
+    return 0;
+}
+
+/* Function Define */
+void minPrim(const int mVertax, const int mStart)
+{
+    /* Vector */
+    vector<pair<int, int> > mPathVec;
+    vector<bool> mVisitVec(mVertax, false);
+    
+    /* Set */
+    set<int> mVertaxSet;
+    
+    /* Integer */
+    int mSum = 0, mEdge = 0;
+    
+    /* Initiate Start Vertax */
+    mVertaxSet.insert(mStart);
+    mVisitVec[mStart] = true;
+    
+    /* Pair */
+    pair<int, int> mLocation;
+    
+    while (mEdge != mVertax - 1)
+    {
+        int mMin = INF;
+        for (set<int>::iterator mBegin = mVertaxSet.begin(); mBegin != mVertaxSet.end(); mBegin++)
+        {
+            for (int ii = mVertax; ii > 0; ii--)
+            {
+                if (mAdj[*mBegin][ii] == INF || mAdj[*mBegin][ii] == CHK || mVisitVec[ii])
+                    continue;
+                
+                if (mAdj[*mBegin][ii] < mMin) { mMin = mAdj[*mBegin][ii]; mLocation = make_pair(*mBegin, ii); }
+            }
+        }
+        
+        mSum += mMin; mEdge++;
+        mVertaxSet.insert(mLocation.second);    mVisitVec[mLocation.second] = true;
+        mAdj[mLocation.first][mLocation.second] = mAdj[mLocation.second][mLocation.first] = CHK;
+    }
+    
+    cout << mSum << endl;
+}
