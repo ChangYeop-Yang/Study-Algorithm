@@ -11,6 +11,27 @@
 
 ##### ※ Greatest common divisor Source Code
 
+```C++
+/* Reculsive greatest Common Divisor - (logN) */
+int GCD(int a, int b) {
+
+	if (b == 0) { return a; }
+	else { return GCD(b, a%b); }
+}
+
+/* Loop greatest Common Divisor - (logN) */
+int GCD(int a, int b) {
+
+	while (b != 0) {
+		const int r = a % b;
+		a = b;
+		b = r;
+	}
+
+	return a;
+}
+```
+
 ## ★ Eratosthenes (에라토스테네스의 체)
 
 <p align="center">
