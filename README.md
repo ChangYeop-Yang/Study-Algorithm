@@ -11,6 +11,36 @@
 
 ##### ※ Greatest common divisor Source Code
 
+## ★ Eratosthenes (에라토스테네스의 체)
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif" />
+</p>
+
+##### ※ Eratosthenes Source Code
+
+```C++
+/* Sieve of Eratoshenes */
+void SoE(const int n, const int m) {
+
+  int pn = 0; // 소수의 개수
+
+  vector<int>	prime; // 소수 저장
+  vector<bool> check = vector<bool>(n + 1, false); // 소수 확인
+
+	for (long long ii = 2; ii <= n; ii++) {
+
+		if (check.at(ii) == false) {
+			pn++;
+			prime.push_back(ii);
+
+			for (long long jj = ii * ii; jj <= n; jj += ii) {
+				check[jj] = true;
+			}
+		}
+	}
+}
+```
 
 ## ★ REFERENCE
 
