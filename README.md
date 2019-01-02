@@ -85,6 +85,30 @@ void SoE(const int n, const int m) {
 }
 ```
 
+## ★ 골드바흐의 추측 (Goldbach's conjecture)
+
+* 골드바흐의 추측(Goldbach's conjecture)은 오래전부터 알려진 정수론의 미해결 문제로, 2보다 큰 모든 짝수는 두 개의 소수(Prime number)의 합으로 표시할 수 있다는 것이다. 이때 하나의 소수를 두 번 사용하는 것은 허용한다.
+
+<p align="center">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Goldbach_partitions_of_the_even_integers_from_4_to_50_rev4b.svg/500px-Goldbach_partitions_of_the_even_integers_from_4_to_50_rev4b.svg.png" />
+</p>
+
+##### ※ Goldbach's conjecture Source Code
+```C++
+void goldbach(int number) {
+
+	for (int ii = 0; ii < length; ii++) {
+		int var = number - prime[ii];
+			if (!check[var] && number == var + prime[ii]) {
+				printf("%d = %d + %d\n", number, prime[ii], var);
+				return;
+			}
+	}
+
+	printf("Goldbach's conjecture is wrong.\n");
+}
+```
+
 ## ★ REFERENCE
 
 :airplane: [Programmers - ㈜ 그렙](https://www.welcomekakao.com/learn/challenges)
@@ -94,3 +118,5 @@ void SoE(const int n, const int m) {
 :airplane: [에라토스테네스의 체 - 위키백과](https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4)
 
 :airplane: [최대공약수 - 위키백과](https://ko.wikipedia.org/wiki/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98)
+
+:airplane: [골드바흐의 추측 - ](https://ko.wikipedia.org/wiki/%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90%EC%9D%98_%EC%B6%94%EC%B8%A1)
