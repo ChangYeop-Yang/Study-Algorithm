@@ -109,6 +109,10 @@ void goldbach(int number) {
 }
 ```
 
+## ★ 무차별 대입 공격(Brute force attack)
+
+* 무차별 대입 공격(영어: brute force attack)은 특정한 암호를 풀기 위해 가능한 모든 값을 대입하는 것을 의미한다. 대부분의 암호화 방식은 이론적으로 무차별 대입 공격에 대해 안전하지 못하며, 충분한 시간이 존재한다면 암호화된 정보를 해독할 수 있다. 하지만 대부분의 경우 모든 계산을 마치려면 실용적이지 못한 비용이나 시간을 소요하게 되어, 공격을 방지하게 한다. 암호의 '취약점'이라는 의미에는 무차별 대입 공격보다 더 빠른 공격 방법이 존재한다는 것을 의미한다.
+
 ## ★ REFERENCE
 
 :airplane: [Programmers - ㈜ 그렙](https://www.welcomekakao.com/learn/challenges)
@@ -120,3 +124,5 @@ void goldbach(int number) {
 :airplane: [최대공약수 - 위키백과](https://ko.wikipedia.org/wiki/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98)
 
 :airplane: [골드바흐의 추측 (Goldbach's conjecture) - 위키백과](https://ko.wikipedia.org/wiki/%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90%EC%9D%98_%EC%B6%94%EC%B8%A1)
+
+:airplane: [무차별 대입 공격(Brute force attack) - ](https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%B0%A8%EB%B3%84_%EB%8C%80%EC%9E%85_%EA%B3%B5%EA%B2%A9)
