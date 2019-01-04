@@ -125,4 +125,4 @@ void goldbach(int number) {
 
 :airplane: [골드바흐의 추측 (Goldbach's conjecture) - 위키백과](https://ko.wikipedia.org/wiki/%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90%EC%9D%98_%EC%B6%94%EC%B8%A1)
 
-:airplane: [무차별 대입 공격(Brute force attack) - ](https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%B0%A8%EB%B3%84_%EB%8C%80%EC%9E%85_%EA%B3%B5%EA%B2%A9)
+:airplane: [무차별 대입 공격(Brute force attack) - 위키백과](https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%B0%A8%EB%B3%84_%EB%8C%80%EC%9E%85_%EA%B3%B5%EA%B2%A9)
