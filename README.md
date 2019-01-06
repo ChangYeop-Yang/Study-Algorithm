@@ -182,7 +182,7 @@ bool priviousPermutation(vector<int> arr, int n) {
 
 :airplane: [Beakjoon Online Judge - ㈜ STARTLINK](https://www.acmicpc.net/)
 
-:airplane: [2018 SW 역량 테스트 준비 - 기초 - Code.Plus](https://code.plus/)
+:airplane: [2018 SW 역량 테스트 준비 (기초) - Code.Plus](https://code.plus/)
 
 :airplane: [에라토스테네스의 체 - 위키백과](https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4)
 
