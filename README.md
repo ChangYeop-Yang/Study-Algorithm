@@ -153,6 +153,8 @@ bool nextPermutation(vector<int> arr, int n) {
 ##### ※ Privious Permutation Source Code
 
 ```C++
+#define SWAP(X, Y, Z) Z=X; X=Y; Y=Z;
+
 bool priviousPermutation(vector<int> arr, int n) {
 
 	int temp = 0;
