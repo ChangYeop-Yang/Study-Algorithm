@@ -153,7 +153,25 @@ bool nextPermutation(vector<int> arr, int n) {
 ##### ※ Privious Permutation Source Code
 
 ```C++
+bool priviousPermutation(vector<int> arr, int n) {
 
+	int temp = 0;
+
+	int ii = n - 1;
+	while (ii > 0 && arr[ii] >= arr[ii - 1]) { ii--; }
+
+	if (ii <= 0) { return false; }
+
+	int jj = n - 1;
+	while (jj >= ii && arr[jj] >= arr[ii - 1]) { jj--; }
+	SWAP(arr[ii - 1], arr[jj], temp);
+
+	for (int tt = n - 1; ii < tt; tt--, ii++) {
+		SWAP(arr[ii], arr[tt], temp);
+	}
+
+	return true;
+}
 ```
 
 ## ★ REFERENCE
