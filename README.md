@@ -113,6 +113,49 @@ void goldbach(int number) {
 
 * 무차별 대입 공격(영어: brute force attack)은 특정한 암호를 풀기 위해 가능한 모든 값을 대입하는 것을 의미한다. 대부분의 암호화 방식은 이론적으로 무차별 대입 공격에 대해 안전하지 못하며, 충분한 시간이 존재한다면 암호화된 정보를 해독할 수 있다. 하지만 대부분의 경우 모든 계산을 마치려면 실용적이지 못한 비용이나 시간을 소요하게 되어, 공격을 방지하게 한다. 암호의 '취약점'이라는 의미에는 무차별 대입 공격보다 더 빠른 공격 방법이 존재한다는 것을 의미한다.
 
+## ★ 순열 (Permutation)
+
+* 서로 다른 nn개의 원소에서 rr개를 중복없이 골라 순서에 상관있게 나열하는 것을 nn개에서 rr개를 택하는 순열이라고 한다.
+
+##### ※ Next Permutation Source Code
+
+```C++
+#define SWAP(X, Y, Z) Z=X; X=Y; Y=Z;
+
+bool nextPermutation(vector<int> arr, int n) {
+
+	int temp = 0;
+
+	/* 001. A[i-1] < A[i]를 만족하는 가장 큰 i를 찾는다. */
+	int ii = n - 1;
+	while (ii > 0 && arr[ii] <= arr[ii - 1]) { ii--; }
+
+	/* Last Permutation */
+	if (ii <= 0) { return false; }
+
+	/* 002. A[i-1] < A[j]를 만족하는 가장 큰 j를 찾는다. (j>=i) */
+	int jj = n - 1;
+	while (jj >= ii && arr[jj] <= arr[ii - 1]) { jj--; }
+	
+	/* 003. A[i-1]과 A[j]를 SWAP 한다. */
+	SWAP(arr[ii - 1], arr[jj], temp);
+
+	/* A[ii]부터 순열을 뒤집는다. */
+	for (int tt = n - 1; ii < tt; tt--, ii++) {
+		SWAP(arr[ii], arr[tt], temp);
+	}
+	
+	return true;
+}
+
+```
+
+##### ※ Privious Permutation Source Code
+
+```C++
+
+```
+
 ## ★ REFERENCE
 
 :airplane: [Programmers - ㈜ 그렙](https://www.welcomekakao.com/learn/challenges)
@@ -125,4 +168,6 @@ void goldbach(int number) {
 
 :airplane: [골드바흐의 추측 (Goldbach's conjecture) - 위키백과](https://ko.wikipedia.org/wiki/%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90%EC%9D%98_%EC%B6%94%EC%B8%A1)
 
-:airplane: [무차별 대입 공격(Brute force attack) - 위키백과](https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%B0%A8%EB%B3%84_%EB%8C%80%EC%9E%85_%EA%B3%B5%EA%B2%A9)
+:airplane: [무차별 대입 공격 (Brute force attack) - 위키백과](https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%B0%A8%EB%B3%84_%EB%8C%80%EC%9E%85_%EA%B3%B5%EA%B2%A9)
+
+:airplane: [순열 (Permutation) - 나무위키](https://namu.wiki/w/%EC%88%9C%EC%97%B4)
