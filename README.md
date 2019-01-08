@@ -198,11 +198,9 @@ bool priviousPermutation(vector<int> arr, int n) {
 
 * 여러 도시들이 있고 한 도시에서 다른 도시로 이동하는 비용이 모두 주어졌을 때, 모든 도시들을 단 한 번만 방문하고 원래 시작점으로 돌아오는 최소 비용의 이동 순서를 구하는 것이다.
 
-##### ※ Traveling Salesperson Problem Source Code (Brute force attack)
+##### [※ Traveling Salesperson Problem Source Code (Brute force attack)](https://www.acmicpc.net/problem/10971)
 
 ```C++
-// https://www.acmicpc.net/problem/10971
-
 #include <vector>
 #include <climits>
 #include <iostream>
