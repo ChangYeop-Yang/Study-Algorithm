@@ -113,6 +113,19 @@ void goldbach(int number) {
 
 * 무차별 대입 공격(영어: brute force attack)은 특정한 암호를 풀기 위해 가능한 모든 값을 대입하는 것을 의미한다. 대부분의 암호화 방식은 이론적으로 무차별 대입 공격에 대해 안전하지 못하며, 충분한 시간이 존재한다면 암호화된 정보를 해독할 수 있다. 하지만 대부분의 경우 모든 계산을 마치려면 실용적이지 못한 비용이나 시간을 소요하게 되어, 공격을 방지하게 한다. 암호의 '취약점'이라는 의미에는 무차별 대입 공격보다 더 빠른 공격 방법이 존재한다는 것을 의미한다.
 
+## ★ Mask
+
+* In computer science, a mask is data that is used for bitwise operations, particularly in a bit field. Using a mask, multiple bits in a byte, nibble, word etc. can be set either on, off or inverted from on to off (or vice versa) in a single bitwise operation.
+
+##### ※ Mask Source Code
+
+```C++
+bool mask(const int number, const int target) {
+	int bit = (1 << target);
+	return (number & bit) == bit;
+}
+```
+
 ## ★ 순열 (Permutation)
 
 * 서로 다른 nn개의 원소에서 rr개를 중복없이 골라 순서에 상관있게 나열하는 것을 nn개에서 rr개를 택하는 순열이라고 한다.
