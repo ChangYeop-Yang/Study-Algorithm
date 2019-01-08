@@ -192,6 +192,71 @@ bool priviousPermutation(vector<int> arr, int n) {
 }
 ```
 
+## ★ Traveling Salesperson Problem
+
+* 외판원 문제(外販員問題, 영어: traveling salesperson problem) 또는 순회 외판원 문제는 조합 최적화 문제의 일종이다. 줄여서 TSP라고도 쓴다. 이 문제는 NP-난해에 속하며, 흔히 계산 복잡도 이론에서 해를 구하기 어려운 문제의 대표적인 예로 많이 다룬다.
+
+* 여러 도시들이 있고 한 도시에서 다른 도시로 이동하는 비용이 모두 주어졌을 때, 모든 도시들을 단 한 번만 방문하고 원래 시작점으로 돌아오는 최소 비용의 이동 순서를 구하는 것이다.
+
+##### ※ Traveling Salesperson Problem Source Code (Brute force attack)
+
+```C++
+// https://www.acmicpc.net/problem/10971
+
+#include <vector>
+#include <climits>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+unsigned int generation() {
+	unsigned static int number = 0;
+	return number++;
+}
+
+int main(void)
+{
+	unsigned int number = 0;
+	cin >> number;
+
+	vector<vector<int> > city = vector<vector<int> >(number);
+	for (unsigned int ii = 0; ii < number; ii++) {
+		city[ii] = vector<int>(number);
+		for (unsigned int jj = 0; jj < number; jj++) {
+			cin >> city[ii][jj];
+		}
+	}
+
+	vector<int> visit = vector<int>(number);
+	generate(visit.begin(), visit.end(), generation);
+
+	register int minVal = INT_MAX;
+
+	do {
+		register pair<bool, long> value = make_pair(false, 0);
+		
+		for (unsigned int ii = 0; ii < number - 1; ii++) {
+			
+			register int weight = city[visit[ii]][visit[ii + 1]];
+			if (weight == 0) { value.first = true; continue; }
+
+			value.second += weight;
+		}
+
+		/* 도착점에서 다시 출발점으로 돌아오는 경우 (city[ visit[number - 1]][visit[0] ]) */
+		register int weigth = city[visit[number - 1]][visit[0]];
+		if (value.first || weigth == 0) { continue; }
+
+		if (minVal > weigth + value.second) { minVal = weigth + value.second; }
+
+	} while ( next_permutation(visit.begin(), visit.end()) );
+
+	cout << minVal << endl;
+
+	return 0;
+}
+```
+
 ## ★ REFERENCE
 
 :airplane: [Programmers - ㈜ 그렙](https://www.welcomekakao.com/learn/challenges)
