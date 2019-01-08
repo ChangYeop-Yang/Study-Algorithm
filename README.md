@@ -120,9 +120,12 @@ void goldbach(int number) {
 ##### ※ Mask Source Code
 
 ```C++
-bool mask(const int number, const int target) {
+bool mask(int number, const int target) {
 	int bit = (1 << target);
 	return (number & bit) == bit;
+	
+	// ※ INSERT -> number |= bit
+	// ※ DELETE and Toggle -> number ^= bit
 }
 ```
 
@@ -206,3 +209,5 @@ bool priviousPermutation(vector<int> arr, int n) {
 :airplane: [무차별 대입 공격 (Brute force attack) - 위키백과](https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%B0%A8%EB%B3%84_%EB%8C%80%EC%9E%85_%EA%B3%B5%EA%B2%A9)
 
 :airplane: [순열 (Permutation) - 나무위키](https://namu.wiki/w/%EC%88%9C%EC%97%B4)
+ 
+:airplane: [Mask (computing) - 위키백과](https://en.wikipedia.org/wiki/Mask_(computing))
