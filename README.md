@@ -122,7 +122,7 @@ void goldbach(int number) {
 ```C++
 bool mask(int number, const int target) {
 	int bit = (1 << target);
-	return (number & bit) == bit; // 
+	return (number & bit) == bit; // Duplicate True
 	
 	// ※ INSERT -> number |= bit
 	// ※ DELETE and Toggle -> number ^= bit
