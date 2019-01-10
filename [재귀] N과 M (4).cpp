@@ -16,9 +16,9 @@ void reculsive(const int length, const int goal, int index, int current, vector<
 		printf("\n"); return;
 	}
 
-	for (int ii = current - 1; ii < length; ii++) {
+	for (int ii = current; ii < length; ii++) {
 		bucket[index] = ii + 1;
-		reculsive(length, goal, index + 1, ii + 1, bucket);
+		reculsive(length, goal, index + 1, ii, bucket);
 	}
 }
 
@@ -28,7 +28,7 @@ int main(void)
 	cin >> input.first >> input.second;
 
 	vector<int> bucket = vector<int>(input.second);
-	reculsive(input.first, input.second, 0, 1, bucket);
+	reculsive(input.first, input.second, 0, 0, bucket);
 
 	return 0;
 }
