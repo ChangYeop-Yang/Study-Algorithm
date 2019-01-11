@@ -1,41 +1,43 @@
+#include <vector>
 #include <cstdio>
+#include <iostream>
 using namespace std;
 
 #define MAX_V 1001
 
-bool mArr[MAX_V][MAX_V];
-bool mVisit[MAX_V];
+vector<bool> visit;
+vector<short> adj[MAX_V];
 
-void DFS(int index, int mVertax)
-{
-	mVisit[index] = true;
+void reculsiveDFS(int index) {
 
-	for (int ii = 1; ii <= mVertax; ii++)
-	{
-		if (!mVisit[ii] && mArr[index][ii])
-		{ DFS(ii, mVertax); }
+	visit[index] = false;
+
+	for (int ii = 0; ii < adj[index].size(); ii++) {
+		short node = adj[index][ii];
+		if (visit[node]) { reculsiveDFS(node); }
 	}
 }
 
 int main(void)
 {
-	int mVertax = 0, mEdge = 0;
-	scanf("%d %d", &mVertax, &mEdge);
+	pair<int, int> input = make_pair(0, 0);
+	cin >> input.first >> input.second;
 
-	int mTemp[2] = { 0,0 };
-	for (int ii = 0; ii < mEdge; ii++)
-	{
-		scanf("%d %d", &mTemp[0], &mTemp[1]);
-		mArr[mTemp[0]][mTemp[1]] = mArr[mTemp[1]][mTemp[0]] = true;
+	visit = vector<bool>(input.first, true);
+
+	pair<short, short> scale = make_pair(0, 0);
+	for (int ii = 0; ii < input.second; ii++) {
+		cin >> scale.first >> scale.second;
+		adj[scale.first - 1].push_back(scale.second - 1);
+		adj[scale.second - 1].push_back(scale.first - 1);
 	}
 
-	int mCount = 0;
-	for (int ii = 1; ii <= mVertax; ii++)
-	{
-		if (!mVisit[ii]) { DFS(ii, mVertax); mCount++; }
+	int answer = 0;
+	for (int ii = 0; ii < input.first; ii++) {
+		if (visit[ii]) { answer++; reculsiveDFS(ii); }
 	}
 
-	printf("%d\n", mCount);
+	cout << answer << endl;
 
 	return 0;
 }
