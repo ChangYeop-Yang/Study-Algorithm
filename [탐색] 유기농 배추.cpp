@@ -1,110 +1,68 @@
-#include <stdio.h>
-#include <string.h>
-#define SIZE 51
-#define SIZE2 10001
- 
-/* Integer Array */
-int Array[SIZE][SIZE];
-int Visit[SIZE][SIZE];
-int Queue[SIZE2][2];
- 
+#include <queue>
+#include <vector>
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+vector<vector<short> > box;
+vector<vector<bool> > visit;
+
+void BFS(int x, int y, int n, int m) {
+	
+	queue<pair<int, int> > que;
+	que.push(make_pair(x, y));
+
+	visit[x][y] = false;
+
+	const vector<pair<int, int> > direct = { make_pair(1, 0), make_pair(0, 1), make_pair(-1, 0), make_pair(0, -1) };
+
+	while (!que.empty()) {
+
+		pair<int, int> index = que.front();
+		que.pop();
+
+ 		for (int ii = 0, length = direct.size(); ii < length; ii++) {
+			
+			pair<int, int> xy = make_pair(index.first + direct[ii].first, index.second + direct[ii].second);
+
+			if (xy.first < 0 || xy.first > n || xy.second < 0 || xy.second > m) { continue; }
+
+			if (visit[xy.first][xy.second] && box[xy.first][xy.second] == 1) {
+				que.push(make_pair(xy.first, xy.second));
+				visit[xy.first][xy.second] = false;
+			}
+		}
+	}
+}
+
 int main(void)
 {
-    /* Integer */
-    unsigned int T = 0;
-    unsigned int M = 0, N = 0, K = 0;
-    unsigned int temp[2] = { 0, 0 };
-    unsigned int Count = 0;
- 
-    /* TestCase 입력 */
-    scanf("%d", &T);
- 
-    /* TestCase 반복문 */
-    for (int count = 0; count < T; count++)
-    {
-        /* 배추밭 정보 입력 */
-        scanf("%d %d %d", &M, &N, &K);
-        for (int ii = 0; ii < K; ii++)
-        { 
-            /* 배추 밭 값 입력 */
-            scanf("%d %d", &temp[0], &temp[1]);
-            Array[temp[0]][temp[1]] = 1;
-        }
- 
-        /* BFS */
-        for (int jj = 0; jj < M; jj++)
-        { for (int kk = 0; kk < N; kk++) { if (Visit[jj][kk] == 0 && Array[jj][kk] == 1) { BFS(jj, kk); Count++; } } }
- 
-        /* 출력 */
-        printf("%d\n", Count); Count = 0;
- 
-        /* 초기화 */
-        memset(Array, 0, sizeof(Array));
-        memset(Visit, 0, sizeof(Visit));
-        memset(Queue, 0, sizeof(Queue));
-    }
- 
-    return 0;
-}
- 
-int BFS(int M, int N)
-{
-    /* Integer */
-    unsigned int SubX = 0, SubY = 0;
-    unsigned int REAR = 0, FRONT = 0;
- 
-    /* Queue 초기값 설정 */
-    Queue[REAR][0] = M;
-    Queue[REAR][1] = N;
-    REAR = (REAR + 1) % SIZE2;
- 
-    /* 초기값 설정 */
-    Visit[M][N] = 1;
- 
-    while (REAR != FRONT)
-    {
-        /* Queue */
-        SubX = Queue[FRONT][0];
-        SubY = Queue[FRONT][1];
-        FRONT = (FRONT + 1) % SIZE2;
- 
-        if (Visit[SubX + 1][SubY] == 0 && Array[SubX + 1][SubY] == 1)
-        {
-            /* Queue 값 설정 */
-            Queue[REAR][0] = SubX + 1;
-            Queue[REAR][1] = SubY;
-            REAR = (REAR + 1) % SIZE2;
-            /* 방문확인 */
-            Visit[SubX + 1][SubY] = 1;
-        }
-        if (Visit[SubX - 1][SubY] == 0 && Array[SubX - 1][SubY] == 1)
-        {
-            /* Queue 값 설정 */
-            Queue[REAR][0] = SubX - 1;
-            Queue[REAR][1] = SubY;
-            REAR = (REAR + 1) % SIZE2;
-            /* 방문확인 */
-            Visit[SubX - 1][SubY] = 1;
-        }
-        if (Visit[SubX][SubY + 1] == 0 && Array[SubX][SubY + 1] == 1)
-        {
-            /* Queue 값 설정 */
-            Queue[REAR][0] = SubX;
-            Queue[REAR][1] = SubY + 1;
-            REAR = (REAR + 1) % SIZE2;
-            /* 방문확인 */
-            Visit[SubX][SubY + 1] = 1;
-        }
-        if (Visit[SubX][SubY - 1] == 0 && Array[SubX][SubY - 1] == 1)
-        {
-            /* Queue 값 설정 */
-            Queue[REAR][0] = SubX;
-            Queue[REAR][1] = SubY - 1;
-            REAR = (REAR + 1) % SIZE2;
-            /* 방문확인 */
-            Visit[SubX][SubY - 1] = 1;
-        }
-    }
- 
-    return 0;
+	int testcase = 0;
+	cin >> testcase;
+
+	while (testcase--) {
+
+		int n = 0, m = 0, c = 0;
+		scanf("%d %d %d", &n, &m, &c);
+
+		box = vector<vector<short> >(n, vector<short>(m));
+		visit = vector<vector<bool> >(n, vector<bool>(m, true));
+
+		pair<int, int> input = make_pair(0, 0);
+		for (int ii = 0; ii < c; ii++) {
+			scanf("%d %d", &input.first, &input.second);
+			box[input.first][input.second] = 1;
+		}
+
+		int answer = 0;
+		for (int ii = 0; ii < n; ii++) {
+			for (int jj = 0; jj < m; jj++) {
+				if (visit[ii][jj] && box[ii][jj] == 1) { BFS(ii, jj, n - 1, m - 1); answer++; }
+			}
+		}
+
+		cout << answer << endl;
+	}
+
+	return 0;
 }
