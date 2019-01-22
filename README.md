@@ -285,6 +285,16 @@ vector<int> coin = {500, 100, 50, 10, 5, 1};
 
 * 프림 알고리즘(Prim's algorithm)은 가중치가 있는 연결된 무향 그래프의 모든 꼭짓점을 포함하면서 각 변의 비용의 합이 최소가 되는 부분 그래프인 트리, 즉 최소 비용 생성나무를 찾는 알고리즘이다.
 
+<p align="center">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/PrimAlgDemo.gif" />
+</p>
+
+1. 그래프에서 하나의 꼭짓점을 선택하여 트리를 만든다.
+
+2. 그래프의 모든 변이 들어 있는 집합을 만든다.
+
+3. 모든 꼭짓점이 트리에 포함되어 있지 않은 동안 트리와 연결된 변 가운데 트리 속의 두 꼭짓점을 연결하지 않는 가장 가중치가 작은 변을 트리에 추가한다.
+
 ##### ※ Prim's algorithm Source Code (우선순위 큐를 사용 한 방법)
 
 ```C++
