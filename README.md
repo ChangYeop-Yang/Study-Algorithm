@@ -5,6 +5,26 @@
   <img src="https://user-images.githubusercontent.com/20036523/50101184-818d8a00-0265-11e9-9d75-ebb9fa3d0740.png" width="250" height="250" />
 </p>
 
+## ★ Factorial (계승)
+
+* 수학에서, 자연수의 계승(階乘, 문화어: 차례곱, 영어: factorial 팩토리얼[*])은 그 수보다 작거나 같은 모든 양의 정수의 곱이다. n이 하나의 자연수일 때, 1에서 n까지의 모든 자연수의 곱을 n에 상대하여 이르는 말이다. 기호는 !을 쓰며 팩토리얼이라고 읽는다. 팩토리얼을 줄여서 팩이라고 읽기도 한다.
+
+```C++
+#define LONG long long
+
+LONG factorial(int index) {
+
+	if (index <= 1) { return 1; }
+
+	// Memorization
+	if (answer[index] > 1) { return answer[index]; }
+
+	answer[index] = index * factorial(index - 1);
+
+	return answer[index];
+}
+```
+
 ## ★ Greatest common divisor (최대 공약수)
 
 * 수론에서, 정수들의 공약수(公約數, 영어: common divisor)는 동시에 그들 모두의 약수인 정수다. 적어도 하나가 0이 아닌 정수들의 최대공약수(最大公約數, 문화어: 련속나눔셈; 영어: greatest common divisor, 약자 GCD)는 공약수 가운데 가장 큰 하나다. 다항식이나 환의 원소에 대해서도 정의할 수 있다.
@@ -288,6 +308,8 @@ vector<int> coin = {500, 100, 50, 10, 5, 1};
 :airplane: [Beakjoon Online Judge - ㈜ STARTLINK](https://www.acmicpc.net/)
 
 :airplane: [2018 SW 역량 테스트 준비 (기초) - Code.Plus](https://code.plus/)
+
+:airplane: [Factorial (계승) - ](https://ko.wikipedia.org/wiki/%EA%B3%84%EC%8A%B9)
 
 :airplane: [에라토스테네스의 체 - 위키백과](https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4)
 
