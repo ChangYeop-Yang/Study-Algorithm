@@ -3,25 +3,25 @@
 #include <algorithm>
 using namespace std;
 
+#define MAX_V 100001
+
+int answer[MAX_V][2];
+
 int main(void)
 {
-	int stairs = 0; cin >> stairs;
+	int number = 0; cin >> number;
 
-	vector<int> score = vector<int>(stairs + 1);
-	vector<int> answer = vector<int>(stairs + 1);
-	for (int ii = 0; ii < stairs; ii++) { cin >> score[ii]; }
+	vector<int> score = vector<int>(number + 1);
+	for (int ii = 1; ii <= number; ii++) { cin >> score[ii]; }
 
-	answer[0] = score.front(); // 첫 계단을 밟은 경우
-	answer[1] = max(score[0] + score[1], score[1]); // 첫 계단을 밟지 않은 경우 또는 첫 계단을 밞고 오는 경우
-	answer[2] = max(answer[0] + score[2], score[1] + score[2]); // 첫 계단을 밟고 바로 오는 경우, 첫 계단을 밟지 않고 오는 경우
-
-	for (int ii = 3; ii <= stairs; ii++) {
-		// 1. 한 계단씩 밟는 경우 D[N] = D[N-3] + C[N-1] + C[N]
-		// 2. 두 계단씩 밟는 경우 D[N] = D[N-2] + C[N]
-		answer[ii] = max(answer[ii - 3] + score[ii - 1], answer[ii - 2]) + score[ii];
+	answer[1][0] = answer[1][1] = score[1]; // 마지막 도착 계단은 반드시 밟아야 한다. 그러므로 항상 첫 계단의 점수를 저장한다.
+	for (int ii = 2; ii <= number; ii++) {
+		// 연속된 세 개의 계단을 모두 밟아서는 안 된다. 단, 시작점은 계단에 포함되지 않는다.
+		answer[ii][0] = answer[ii - 1][1] + score[ii]; // 전에 칸을 밝고 오는 경우이므로 N-1칸은 반드시 연속 된 칸을 밟지 않은 경우여야 한다.
+		answer[ii][1] = max(answer[ii - 2][0], answer[ii - 2][1]) + score[ii]; // 현재 칸에 두 번 건너띄어서 오는 경우는 전전칸의 칸을 한번 건너 뛰거나 두번 건너 뛴경우다.
 	}
 
-	cout << answer[stairs - 1] << endl;
+	cout << max(answer[number][0], answer[number][1]) << endl;
 
 	return 0;
 }
