@@ -6,8 +6,10 @@
 #include <map>
 using namespace std;
 
+
 map<string, bool, greater<string> > mMap;
 map<string, bool>::iterator mIter;
+
 
 int main(void)
 {
