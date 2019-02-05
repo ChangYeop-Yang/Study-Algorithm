@@ -2,12 +2,14 @@
 #include <iostream>
 using namespace std;
 
-/* Reculsive greatest Common Divisor - (logN) */
+
+/* Reculsive greatest Common Divisor - (logN)  */
 int GCD(int a, int b) {
 
 	if (b == 0) { return a; }
 	else { return GCD(b, a%b); }
 }
+
 
 int main(void)
 {
