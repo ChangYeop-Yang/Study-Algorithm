@@ -346,4 +346,4 @@ vector<int> coin = {500, 100, 50, 10, 5, 1};
 
 :airplane: [탐욕 알고리즘 (Greedy Algorithm) - 위키백과](https://ko.wikipedia.org/wiki/%ED%83%90%EC%9A%95_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 
-:airplane: [Palindromic number - 위키백과](https://ko.wikipedia.org/wiki/%EB%8C%80%EC%B9%AD%EC%88%98)
+:airplane: [회문수 (回文數, Palindromic number) - 위키백과](https://ko.wikipedia.org/wiki/%EB%8C%80%EC%B9%AD%EC%88%98)
