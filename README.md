@@ -105,6 +105,22 @@ void SoE(const int n, const int m) {
 }
 ```
 
+## ★ 회문수 (回文數, Palindromic number)
+
+* 대칭수(對稱數) 또는 회문수(回文數)는 순서대로 읽은 수와 거꾸로 읽은 수가 일치하는 수를 말한다. 예를 들면 34543은 대칭수이고, 34567은 대칭수가 아니다. 컴퓨터 학자 그루엔버거(F.Gruenberger)는 1984년에 미국의 잡지〈사이언티픽 아메리칸〉에 싣게 된 ‘컴퓨터 레크리에이션’이라는 칼럼에서 이와 같은 흥미로운 알고리즘을 제시해서 많은 사람의 이목을 끌었다. 2002는 2와 2, 0과 0의 위치를 바꿔도 대칭수이다.
+
+```C++
+void setPalindrome(const int prime) {
+
+	STRING_PAIR comp = make_pair(string(), string());
+	comp.first = comp.second = to_string(prime);
+
+	reverse(comp.second.begin(), comp.second.end());
+
+	if (comp.first == comp.second) { palindrome.push_back(prime); }
+}
+```
+
 ## ★ 골드바흐의 추측 (Goldbach's conjecture)
 
 * 골드바흐의 추측(Goldbach's conjecture)은 오래전부터 알려진 정수론의 미해결 문제로, 2보다 큰 모든 짝수는 두 개의 소수(Prime number)의 합으로 표시할 수 있다는 것이다. 이때 하나의 소수를 두 번 사용하는 것은 허용한다.
@@ -324,3 +340,5 @@ vector<int> coin = {500, 100, 50, 10, 5, 1};
 :airplane: [Mask (computing) - 위키백과](https://en.wikipedia.org/wiki/Mask_(computing))
 
 :airplane: [탐욕 알고리즘 (Greedy Algorithm) - 위키백과](https://ko.wikipedia.org/wiki/%ED%83%90%EC%9A%95_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+
+:airplane: [Palindromic number - ](https://ko.wikipedia.org/wiki/%EB%8C%80%EC%B9%AD%EC%88%98)
