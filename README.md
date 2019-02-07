@@ -322,6 +322,53 @@ vector<int> coin = {500, 100, 50, 10, 5, 1};
 	}
 ```
 
+## ★ 회전변환행렬 (Rotation Matrix)
+
+<p align="center">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Matrix-font-linear-map001Rota.svg/300px-Matrix-font-linear-map001Rota.svg.png" />
+</p>
+
+* 선형 변환에서 회전변환행렬(Rotation matrix)은 임의의 행렬을 원점을 중심으로 회전시킨다. 회전변환행렬(Rotation matrix)은 선형 변환의 성질중 하나이며, 동시에 여러 회전변환행렬중 일부는 대칭변환행렬 즉 반사행렬(Reflection matrix)과 관련이 있다.
+
+```C++
+/*
+ * clockwise rotate
+ * first reverse up to down, then swap the symmetry 
+ * 1 2 3     7 8 9     7 4 1
+ * 4 5 6  => 4 5 6  => 8 5 2
+ * 7 8 9     1 2 3     9 6 3
+*/
+void rotate(vector<vector<int> > &matrix) {
+	
+    reverse(matrix.begin(), matrix.end());
+    /* 
+	for (int ii = 0; ii <= length / 2; ii++) {
+            for (int jj = 0; jj <= length; jj++) { SWAP(matrix[ii][jj], matrix[length - ii][jj], temp); }
+        }
+    */
+	
+	for (int i = 0; i < matrix.size(); ++i) {
+        for (int j = i + 1; j < matrix[i].size(); ++j)
+            swap(matrix[i][j], matrix[j][i]);
+    }
+}
+
+/*
+ * anticlockwise rotate
+ * first reverse left to right, then swap the symmetry
+ * 1 2 3     3 2 1     3 6 9
+ * 4 5 6  => 6 5 4  => 2 5 8
+ * 7 8 9     9 8 7     1 4 7
+*/
+void anti_rotate(vector<vector<int> > &matrix) {
+    for (auto vi : matrix) reverse(vi.begin(), vi.end());
+    for (int i = 0; i < matrix.size(); ++i) {
+        for (int j = i + 1; j < matrix[i].size(); ++j)
+            swap(matrix[i][j], matrix[j][i]);
+    }
+}
+```
+
 ## ★ REFERENCE
 
 :airplane: [Programmers - ㈜ 그렙](https://www.welcomekakao.com/learn/challenges)
