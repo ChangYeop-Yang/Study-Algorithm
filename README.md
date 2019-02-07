@@ -395,3 +395,5 @@ void anti_rotate(vector<vector<int> > &matrix) {
 :airplane: [탐욕 알고리즘 (Greedy Algorithm) - 위키백과](https://ko.wikipedia.org/wiki/%ED%83%90%EC%9A%95_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 
 :airplane: [회문수 (回文數, Palindromic number) - 위키백과](https://ko.wikipedia.org/wiki/%EB%8C%80%EC%B9%AD%EC%88%98)
+
+:airplane: [회전변환행렬 (Rotation Matrix) - 위키백과](https://ko.wikipedia.org/wiki/%ED%9A%8C%EC%A0%84%EB%B3%80%ED%99%98%ED%96%89%EB%A0%AC)
