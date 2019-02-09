@@ -372,13 +372,15 @@ void anti_rotate(vector<vector<int> > &matrix) {
 
 ## ★ REFERENCE
 
+:airplane: [LeetCode](https://leetcode.com/)
+
 :airplane: [Programmers - ㈜ 그렙](https://www.welcomekakao.com/learn/challenges)
 
 :airplane: [Beakjoon Online Judge - ㈜ STARTLINK](https://www.acmicpc.net/)
 
 :airplane: [2018 SW 역량 테스트 준비 (기초) - Code.Plus](https://code.plus/)
 
-:airplane: [Factorial (계승) - ](https://ko.wikipedia.org/wiki/%EA%B3%84%EC%8A%B9)
+:airplane: [Factorial (계승) - 위키백과](https://ko.wikipedia.org/wiki/%EA%B3%84%EC%8A%B9)
 
 :airplane: [에라토스테네스의 체 - 위키백과](https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4)
 
