@@ -374,6 +374,48 @@ void anti_rotate(vector<vector<int> > &matrix) {
 
 * 위상 정렬(topological sorting)은 유향 그래프의 꼭짓점들(vertex)을 변의 방향을 거스르지 않도록 나열하는 것을 의미한다. 위상정렬을 가장 잘 설명해 줄 수 있는 예로 대학의 선수과목(prerequisite) 구조를 예로 들 수 있다. 만약 특정 수강과목에 선수과목이 있다면 그 선수 과목부터 수강해야 하므로, 특정 과목들을 수강해야 할 때 위상 정렬을 통해 올바른 수강 순서를 찾아낼 수 있다. 이와 같이 선후 관계가 정의된 그래프 구조 상에서 선후 관계에 따라 정렬하기 위해 위상 정렬을 이용할 수 있다. 정렬의 순서는 유향 그래프의 구조에 따라 여러 개의 종류가 나올 수 있다. 위상 정렬이 성립하기 위해서는 반드시 그래프의 순환이 존재하지 않아야 한다. 즉, 그래프가 비순환 유향 그래프(directed acyclic graph)여야 한다.
 
+##### [※ Topological Sorting Source Code - 줄 세우기](https://www.acmicpc.net/problem/2252)
+
+```C++
+#define INT_VECTOR vector<int>
+#define INT_PAIR pair<int, int>
+
+void reculsiveDFS(int index, vector<bool> & visit, vector<INT_VECTOR> & student, vector<int> & answer) {
+
+	visit[index] = true;
+
+	for (int ii = 0; ii < student[index].size(); ii++) {
+		const int there = student[index][ii];
+		if (visit[there] == false) { reculsiveDFS(there, visit, student, answer); }
+	}
+
+	// DFS 종료시 방문 한 정점의 번호를 저장한다.
+	answer.push_back(index);
+}
+
+	vector<int> check = vector<int>(input.first);
+	vector<bool> visit = vector<bool>(input.first);
+	vector<INT_VECTOR> student = vector<INT_VECTOR>(input.first);
+	
+	INT_PAIR pos = make_pair(0, 0);
+	for (int ii = 0; ii < input.second; ii++) {
+		scanf("%d %d", &pos.first, &pos.second);
+		student[pos.first - 1].push_back(pos.second - 1);
+
+		// 위상정렬의 핵심은 들어오는 간선이 하나도 없는 정점들을 찾아서 결과를 찾는다.
+		check[pos.second - 1]++;
+	}
+
+	vector<int> answer;
+	for (int ii = 0; ii < input.first; ii++) {
+		// 방문하지 않은 정점이며 간선이 존재하는 않은 정점
+		if (check[ii] == 0 && visit[ii] == false) { reculsiveDFS(ii, visit, student, answer); }
+	}
+
+	// DFS 종료한 뒤 기록된 순서를 뒤집으면 위상 정렬의 결과를 얻는다.
+	for (auto begin = answer.rbegin(); begin != answer.rend(); begin++) { cout << *begin + 1 << endl; }
+```
+
 ## ★ REFERENCE
 
 :airplane: [LeetCode](https://leetcode.com/)
