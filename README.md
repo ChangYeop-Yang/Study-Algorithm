@@ -62,6 +62,8 @@ int GCD(int a, int b) {
   <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif" />
 </p>
 
+##### :capital_abcd: Eratosthenes Process
+
 1. 2부터 소수를 구하고자 하는 구간의 모든 수를 나열한다. 그림에서 회색 사각형으로 두른 수들이 여기에 해당한다.
 
 2. 2는 소수이므로 오른쪽에 2를 쓴다. (빨간색)
