@@ -138,7 +138,7 @@ void setPalindrome(const int prime) {
 	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Goldbach_partitions_of_the_even_integers_from_4_to_50_rev4b.svg/500px-Goldbach_partitions_of_the_even_integers_from_4_to_50_rev4b.svg.png" />
 </p>
 
-##### :page_facing_up: Goldbach's conjecture Source Code
+##### :page_facing_up: [Goldbach's conjecture Source Code - 골드바흐의 추측](https://www.acmicpc.net/problem/6588)
 ```C++
 void goldbach(int number) {
 
