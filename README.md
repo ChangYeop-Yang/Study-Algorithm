@@ -111,6 +111,8 @@ void SoE(const int n, const int m) {
 
 * 대칭수(對稱數) 또는 회문수(回文數)는 순서대로 읽은 수와 거꾸로 읽은 수가 일치하는 수를 말한다. 예를 들면 34543은 대칭수이고, 34567은 대칭수가 아니다. 컴퓨터 학자 그루엔버거(F.Gruenberger)는 1984년에 미국의 잡지〈사이언티픽 아메리칸〉에 싣게 된 ‘컴퓨터 레크리에이션’이라는 칼럼에서 이와 같은 흥미로운 알고리즘을 제시해서 많은 사람의 이목을 끌었다. 2002는 2와 2, 0과 0의 위치를 바꿔도 대칭수이다.
 
+##### :page_facing_up: [Palindromic number Source Code - 소수인팰린드롬](https://www.acmicpc.net/problem/1990)
+
 ```C++
 #define STRING_PAIR pair<string, string>
 
