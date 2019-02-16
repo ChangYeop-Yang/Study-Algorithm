@@ -29,7 +29,7 @@ LONG factorial(int index) {
 
 * 수론에서, 정수들의 공약수(公約數, 영어: common divisor)는 동시에 그들 모두의 약수인 정수다. 적어도 하나가 0이 아닌 정수들의 최대공약수(最大公約數, 문화어: 련속나눔셈; 영어: greatest common divisor, 약자 GCD)는 공약수 가운데 가장 큰 하나다. 다항식이나 환의 원소에 대해서도 정의할 수 있다.
 
-##### ※ Greatest common divisor Source Code
+##### :page_facing_up: Greatest common divisor Source Code
 
 ```C++
 /* Reculsive greatest Common Divisor - (logN) */
@@ -80,7 +80,7 @@ int GCD(int a, int b) {
 
 10. 위의 과정을 반복하면 구하는 구간의 모든 소수가 남는다.
 
-##### ※ Eratosthenes Source Code
+##### :page_facing_up: Eratosthenes Source Code
 
 ```C++
 /* Sieve of Eratoshenes */
@@ -134,7 +134,7 @@ void setPalindrome(const int prime) {
 	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Goldbach_partitions_of_the_even_integers_from_4_to_50_rev4b.svg/500px-Goldbach_partitions_of_the_even_integers_from_4_to_50_rev4b.svg.png" />
 </p>
 
-##### ※ Goldbach's conjecture Source Code
+##### :page_facing_up: Goldbach's conjecture Source Code
 ```C++
 void goldbach(int number) {
 
@@ -158,7 +158,7 @@ void goldbach(int number) {
 
 * In computer science, a mask is data that is used for bitwise operations, particularly in a bit field. Using a mask, multiple bits in a byte, nibble, word etc. can be set either on, off or inverted from on to off (or vice versa) in a single bitwise operation.
 
-##### ※ Mask Source Code
+##### :page_facing_up: Mask Source Code
 
 ```C++
 bool mask(int number, const int target) {
@@ -174,7 +174,7 @@ bool mask(int number, const int target) {
 
 * 서로 다른 nn개의 원소에서 rr개를 중복없이 골라 순서에 상관있게 나열하는 것을 nn개에서 rr개를 택하는 순열이라고 한다.
 
-##### ※ Next Permutation Source Code
+##### :page_facing_up: Next Permutation Source Code
 
 ```C++
 #define SWAP(X, Y, Z) Z=X; X=Y; Y=Z;
@@ -207,7 +207,7 @@ bool nextPermutation(vector<int> arr, int n) {
 
 ```
 
-##### ※ Privious Permutation Source Code
+##### :page_facing_up: Privious Permutation Source Code
 
 ```C++
 #define SWAP(X, Y, Z) Z=X; X=Y; Y=Z;
@@ -239,7 +239,7 @@ bool priviousPermutation(vector<int> arr, int n) {
 
 * 여러 도시들이 있고 한 도시에서 다른 도시로 이동하는 비용이 모두 주어졌을 때, 모든 도시들을 단 한 번만 방문하고 원래 시작점으로 돌아오는 최소 비용의 이동 순서를 구하는 것이다.
 
-##### [※ Traveling Salesperson Problem Source Code (Brute force attack)](https://www.acmicpc.net/problem/10971)
+##### :page_facing_up: [Traveling Salesperson Problem Source Code (Brute force attack)](https://www.acmicpc.net/problem/10971)
 
 ```C++
 #include <vector>
@@ -300,7 +300,7 @@ int main(void)
 
 * **탐욕 알고리즘은 최적해를 구하는 데에 사용되는 근사적인 방법으로, 여러 경우 중 하나를 결정해야 할 때마다 그 순간에 최적이라고 생각되는 것을 선택해 나가는 방식으로 진행하여 최종적인 해답에 도달한다. 순간마다 하는 선택은 그 순간에 대해 지역적으로는 최적이지만, 그 선택들을 계속 수집하여 최종적(전역적)인 해답을 만들었다고 해서, 그것이 최적이라는 보장은 없다.** </br></br>탐욕 알고리즘이 잘 작동하는 문제는 대부분 탐욕스런 선택 조건(greedy choice property)과 최적 부분 구조 조건(optimal substructure)이라는 두 가지 조건이 만족된다. 탐욕스런 선택 조건은 앞의 선택이 이후의 선택에 영향을 주지 않는다는 것이며, 최적 부분 구조 조건은 문제에 대한 최적해가 부분문제에 대해서도 역시 최적해라는 것이다. </br></br>이러한 조건이 성립하지 않는 경우에는 탐욕 알고리즘은 최적해를 구하지 못한다. 하지만, 이러한 경우에도 탐욕 알고리즘은 근사 알고리즘으로 사용이 가능할 수 있으며, 대부분의 경우 계산 속도가 빠르기 때문에 실용적으로 사용할 수 있다. 이 경우 역시 어느 정도까지 최적해에 가까운 해를 구할 수 있는지를 보장하려면 엄밀한 증명이 필요하다. 어떤 특별한 구조가 있는 문제에 대해서는 탐욕 알고리즘이 언제나 최적해를 찾아낼 수 있다.
 
-##### [※ Greedy Algorithm Source Code - 거스름돈](https://www.acmicpc.net/problem/5585)
+##### :page_facing_up: [Greedy Algorithm Source Code - 거스름돈](https://www.acmicpc.net/problem/5585)
 
 ```C++
 vector<int> coin = {500, 100, 50, 10, 5, 1};
@@ -330,7 +330,7 @@ vector<int> coin = {500, 100, 50, 10, 5, 1};
 
 * 선형 변환에서 회전변환행렬(Rotation matrix)은 임의의 행렬을 원점을 중심으로 회전시킨다. 회전변환행렬(Rotation matrix)은 선형 변환의 성질중 하나이며, 동시에 여러 회전변환행렬중 일부는 대칭변환행렬 즉 반사행렬(Reflection matrix)과 관련이 있다.
 
-##### ※ [Sources By LeetCode (shichaotan)](https://leetcode.com/problems/rotate-image/discuss/18872/A-common-method-to-rotate-the-image)
+##### :page_facing_up: [Sources By LeetCode (shichaotan)](https://leetcode.com/problems/rotate-image/discuss/18872/A-common-method-to-rotate-the-image)
 
 ```C++
 /*
@@ -374,7 +374,7 @@ void anti_rotate(vector<vector<int> > &matrix) {
 
 * 위상 정렬(topological sorting)은 유향 그래프의 꼭짓점들(vertex)을 변의 방향을 거스르지 않도록 나열하는 것을 의미한다. 위상정렬을 가장 잘 설명해 줄 수 있는 예로 대학의 선수과목(prerequisite) 구조를 예로 들 수 있다. 만약 특정 수강과목에 선수과목이 있다면 그 선수 과목부터 수강해야 하므로, 특정 과목들을 수강해야 할 때 위상 정렬을 통해 올바른 수강 순서를 찾아낼 수 있다. 이와 같이 선후 관계가 정의된 그래프 구조 상에서 선후 관계에 따라 정렬하기 위해 위상 정렬을 이용할 수 있다. 정렬의 순서는 유향 그래프의 구조에 따라 여러 개의 종류가 나올 수 있다. 위상 정렬이 성립하기 위해서는 반드시 그래프의 순환이 존재하지 않아야 한다. 즉, 그래프가 비순환 유향 그래프(directed acyclic graph)여야 한다.
 
-##### [※ Topological Sorting Source Code (DFS 방식) - 줄 세우기](https://www.acmicpc.net/problem/2252)
+##### :page_facing_up: [Topological Sorting Source Code (DFS 방식) - 줄 세우기](https://www.acmicpc.net/problem/2252)
 
 ```C++
 #define INT_VECTOR vector<int>
@@ -416,7 +416,7 @@ void reculsiveDFS(int index, vector<bool> & visit, vector<INT_VECTOR> & student,
 	for (auto begin = answer.rbegin(); begin != answer.rend(); begin++) { cout << *begin + 1 << endl; }
 ```
 
-##### [※ Topological Sorting Source Code (우선순위 큐 방식)]()
+##### :page_facing_up: [Topological Sorting Source Code (우선순위 큐 방식)]()
 
 ```C++
 ```
