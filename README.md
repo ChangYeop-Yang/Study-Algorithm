@@ -176,7 +176,7 @@ bool mask(int number, const int target) {
 
 * 서로 다른 nn개의 원소에서 rr개를 중복없이 골라 순서에 상관있게 나열하는 것을 nn개에서 rr개를 택하는 순열이라고 한다.
 
-##### :page_facing_up: Next Permutation Source Code
+##### :page_facing_up: [Next Permutation Source Code - 다음 순열](https://www.acmicpc.net/problem/10972)
 
 ```C++
 #define SWAP(X, Y, Z) Z=X; X=Y; Y=Z;
@@ -209,7 +209,7 @@ bool nextPermutation(vector<int> arr, int n) {
 
 ```
 
-##### :page_facing_up: Privious Permutation Source Code
+##### :page_facing_up: [Privious Permutation Source Code - 이전 순열](https://www.acmicpc.net/problem/10973)
 
 ```C++
 #define SWAP(X, Y, Z) Z=X; X=Y; Y=Z;
