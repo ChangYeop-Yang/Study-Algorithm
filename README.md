@@ -386,6 +386,69 @@ void anti_rotate(vector<vector<int> > &matrix) {
 
 * 주요 개념은 해를 얻을 때까지 모든 가능성을 시도한다는 점이다. 모든 가능성은 하나의 트리처럼 구성할 수 있으며, 가지 중에 해결책이 있다. 트리를 검사하기 위해 깊이 우선 탐색을 사용한다. 탐색 중에 오답을 만나면 이전 분기점으로 돌아간다. 시도해보지 않은 다른 해결 방법이 있으면 시도한다. 해결 방법이 더 없으면 더 이전의 분기점으로 돌아간다. 모든 트리의 노드를 검사해도 답을 못 찾을 경우, 이 문제의 해결책은 없는 것이다. </br></br>퇴각검색은 보통 재귀 함수로 구현된다. 재귀로 파생된 해결 방법은 하나 이상의 변수가 필요한데 , 이것은 현재 시점에서 적용할 수 있는 변수값들을 알고 있다. 퇴각검색은 깊이 우선 탐색과 대략 같으나 기억 공간은 덜 차지한다. 현재의 상태를 보관하고 바꾸는 동안만 차지한다. 탐색 속도를 높이기 위해, 재귀 호출을 하기 전에 시도할 값을 정하고 조건(전진 탐색의 경우)을 벗어난 값을 지우는 알고리즘을 적용할 수 있다. 아니면 그 값을 제외한 다른 값들을 탐색할 수도 있다.
 
+##### :page_facing_up: [Backtracking Source Code - N-Queens](https://leetcode.com/problems/n-queens/)
+
+```C++
+#define HOLE false
+#define QUEEN true
+#define INT_PAIR pair<int, int>
+#define BOOL_VECTOR vector<bool>
+#define STRING_VECTOR vector<string>
+
+void fillBoard(vector<BOOL_VECTOR> & board, const INT_PAIR index, const int size) {
+
+	const vector<INT_PAIR> direct = {make_pair(0, 1), make_pair(0, -1), make_pair(1, 0), make_pair(-1, 0)
+		, make_pair(1, 1), make_pair(-1, -1), make_pair(1, -1), make_pair(-1, 1) };
+
+	for (int ii = 0; ii < direct.size(); ii++) {
+		 
+		INT_PAIR there = index;
+		while (true) {
+			// Case Out Of Range
+			if (there.first < 0 || there.first >= size || there.second < 0 || there.second >= size) { break; }
+			// Case Fill
+			board[there.first][there.second] = true;
+			there.first += direct[ii].first, there.second += direct[ii].second;
+		}
+	}
+}
+
+vector<INT_PAIR> findQueenPos(const int size, vector<BOOL_VECTOR> board) {
+	
+	vector<INT_PAIR> location;
+
+	for (int ii = 0; ii < size; ii++) {
+		for (int jj = 0; jj < size; jj++) {
+			if (board[ii][jj] == QUEEN) { location.push_back(make_pair(ii, jj)); }
+		}
+	}
+
+	return location;
+}
+
+bool promissing(vector<BOOL_VECTOR> board, const INT_PAIR index, const int size) {
+
+	const vector<INT_PAIR> location = findQueenPos(size, board);
+	for (const auto pos : location) { fillBoard(board, pos, size); }
+	return board[index.first][index.second]; // TRUE - QUEEN, FALSE - HOLE
+}
+
+void backtracking(vector<BOOL_VECTOR> board, const INT_PAIR index, const int size, int depth, int & answer) {
+
+	// Case Depth Equal N.
+	if (depth == size) { answer++; return; }
+
+	for (int ii = 0; ii < size; ii++) {
+		// Case Check Queen Position.
+		if (promissing(board, make_pair(depth, ii), size) == HOLE) {
+			board[depth][ii] = QUEEN; // Queen을 놓아 본다.
+			backtracking(board, make_pair(depth, ii), size, depth + 1, answer);
+			board[depth][ii] = HOLE; // Queen을 빼본다.
+		}
+	}
+}
+```
+
 ## :mega: 위상 정렬 (Topological Sorting)
 
 * 위상 정렬(topological sorting)은 유향 그래프의 꼭짓점들(vertex)을 변의 방향을 거스르지 않도록 나열하는 것을 의미한다. 위상정렬을 가장 잘 설명해 줄 수 있는 예로 대학의 선수과목(prerequisite) 구조를 예로 들 수 있다. 만약 특정 수강과목에 선수과목이 있다면 그 선수 과목부터 수강해야 하므로, 특정 과목들을 수강해야 할 때 위상 정렬을 통해 올바른 수강 순서를 찾아낼 수 있다. 이와 같이 선후 관계가 정의된 그래프 구조 상에서 선후 관계에 따라 정렬하기 위해 위상 정렬을 이용할 수 있다. 정렬의 순서는 유향 그래프의 구조에 따라 여러 개의 종류가 나올 수 있다. 위상 정렬이 성립하기 위해서는 반드시 그래프의 순환이 존재하지 않아야 한다. 즉, 그래프가 비순환 유향 그래프(directed acyclic graph)여야 한다.
