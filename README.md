@@ -5,7 +5,7 @@
   <img src="https://user-images.githubusercontent.com/20036523/50101184-818d8a00-0265-11e9-9d75-ebb9fa3d0740.png" width="250" height="250" />
 </p>
 
-## :bulb: Factorial (계승)
+## :mega: Factorial (계승)
 
 * 수학에서, 자연수의 계승(階乘, 문화어: 차례곱, 영어: factorial 팩토리얼[*])은 그 수보다 작거나 같은 모든 양의 정수의 곱이다. n이 하나의 자연수일 때, 1에서 n까지의 모든 자연수의 곱을 n에 상대하여 이르는 말이다. 기호는 !을 쓰며 팩토리얼이라고 읽는다. 팩토리얼을 줄여서 팩이라고 읽기도 한다.
 
@@ -27,7 +27,7 @@ LONG factorial(int index) {
 }
 ```
 
-## :bulb: Greatest common divisor (최대 공약수)
+## :mega: Greatest common divisor (최대 공약수)
 
 * 수론에서, 정수들의 공약수(公約數, 영어: common divisor)는 동시에 그들 모두의 약수인 정수다. 적어도 하나가 0이 아닌 정수들의 최대공약수(最大公約數, 문화어: 련속나눔셈; 영어: greatest common divisor, 약자 GCD)는 공약수 가운데 가장 큰 하나다. 다항식이나 환의 원소에 대해서도 정의할 수 있다.
 
@@ -54,7 +54,7 @@ int GCD(int a, int b) {
 }
 ```
 
-## :bulb: Eratosthenes (에라토스테네스의 체)
+## :mega: Eratosthenes (에라토스테네스의 체)
 
 * 수학에서 에라토스테네스의 체는 소수를 찾는 방법이다. 고대 그리스 수학자 에라토스테네스가 발견하였다.
 
@@ -109,7 +109,7 @@ void SoE(const int n, const int m) {
 }
 ```
 
-## :bulb: 회문수 (回文數, Palindromic number)
+## :mega: 회문수 (回文數, Palindromic number)
 
 * 대칭수(對稱數) 또는 회문수(回文數)는 순서대로 읽은 수와 거꾸로 읽은 수가 일치하는 수를 말한다. 예를 들면 34543은 대칭수이고, 34567은 대칭수가 아니다. 컴퓨터 학자 그루엔버거(F.Gruenberger)는 1984년에 미국의 잡지〈사이언티픽 아메리칸〉에 싣게 된 ‘컴퓨터 레크리에이션’이라는 칼럼에서 이와 같은 흥미로운 알고리즘을 제시해서 많은 사람의 이목을 끌었다. 2002는 2와 2, 0과 0의 위치를 바꿔도 대칭수이다.
 
@@ -132,7 +132,7 @@ void setPalindrome(const int prime) {
 }
 ```
 
-## :bulb: 골드바흐의 추측 (Goldbach's conjecture)
+## :mega: 골드바흐의 추측 (Goldbach's conjecture)
 
 * 골드바흐의 추측(Goldbach's conjecture)은 오래전부터 알려진 정수론의 미해결 문제로, 2보다 큰 모든 짝수는 두 개의 소수(Prime number)의 합으로 표시할 수 있다는 것이다. 이때 하나의 소수를 두 번 사용하는 것은 허용한다.
 
@@ -156,11 +156,11 @@ void goldbach(int number) {
 }
 ```
 
-## :bulb: 무차별 대입 공격 (Brute force attack)
+## :mega: 무차별 대입 공격 (Brute force attack)
 
 * 무차별 대입 공격(영어: brute force attack)은 특정한 암호를 풀기 위해 가능한 모든 값을 대입하는 것을 의미한다. 대부분의 암호화 방식은 이론적으로 무차별 대입 공격에 대해 안전하지 못하며, 충분한 시간이 존재한다면 암호화된 정보를 해독할 수 있다. 하지만 대부분의 경우 모든 계산을 마치려면 실용적이지 못한 비용이나 시간을 소요하게 되어, 공격을 방지하게 한다. 암호의 '취약점'이라는 의미에는 무차별 대입 공격보다 더 빠른 공격 방법이 존재한다는 것을 의미한다.
 
-## :bulb: Mask
+## :mega: Mask
 
 * In computer science, a mask is data that is used for bitwise operations, particularly in a bit field. Using a mask, multiple bits in a byte, nibble, word etc. can be set either on, off or inverted from on to off (or vice versa) in a single bitwise operation.
 
@@ -176,7 +176,7 @@ bool mask(int number, const int target) {
 }
 ```
 
-## :bulb: 순열 (Permutation)
+## :mega: 순열 (Permutation)
 
 * 서로 다른 nn개의 원소에서 rr개를 중복없이 골라 순서에 상관있게 나열하는 것을 nn개에서 rr개를 택하는 순열이라고 한다.
 
@@ -239,7 +239,7 @@ bool priviousPermutation(vector<int> arr, int n) {
 }
 ```
 
-## :bulb: Traveling Salesperson Problem
+## :mega: Traveling Salesperson Problem
 
 * 외판원 문제(外販員問題, 영어: traveling salesperson problem) 또는 순회 외판원 문제는 조합 최적화 문제의 일종이다. 줄여서 TSP라고도 쓴다. 이 문제는 NP-난해에 속하며, 흔히 계산 복잡도 이론에서 해를 구하기 어려운 문제의 대표적인 예로 많이 다룬다.
 
@@ -302,7 +302,7 @@ int main(void)
 }
 ```
 
-## :bulb: 탐욕 알고리즘 (Greedy Algorithm)
+## :mega: 탐욕 알고리즘 (Greedy Algorithm)
 
 * **탐욕 알고리즘은 최적해를 구하는 데에 사용되는 근사적인 방법으로, 여러 경우 중 하나를 결정해야 할 때마다 그 순간에 최적이라고 생각되는 것을 선택해 나가는 방식으로 진행하여 최종적인 해답에 도달한다. 순간마다 하는 선택은 그 순간에 대해 지역적으로는 최적이지만, 그 선택들을 계속 수집하여 최종적(전역적)인 해답을 만들었다고 해서, 그것이 최적이라는 보장은 없다.** </br></br>탐욕 알고리즘이 잘 작동하는 문제는 대부분 탐욕스런 선택 조건(greedy choice property)과 최적 부분 구조 조건(optimal substructure)이라는 두 가지 조건이 만족된다. 탐욕스런 선택 조건은 앞의 선택이 이후의 선택에 영향을 주지 않는다는 것이며, 최적 부분 구조 조건은 문제에 대한 최적해가 부분문제에 대해서도 역시 최적해라는 것이다. </br></br>이러한 조건이 성립하지 않는 경우에는 탐욕 알고리즘은 최적해를 구하지 못한다. 하지만, 이러한 경우에도 탐욕 알고리즘은 근사 알고리즘으로 사용이 가능할 수 있으며, 대부분의 경우 계산 속도가 빠르기 때문에 실용적으로 사용할 수 있다. 이 경우 역시 어느 정도까지 최적해에 가까운 해를 구할 수 있는지를 보장하려면 엄밀한 증명이 필요하다. 어떤 특별한 구조가 있는 문제에 대해서는 탐욕 알고리즘이 언제나 최적해를 찾아낼 수 있다.
 
@@ -328,7 +328,7 @@ vector<int> coin = {500, 100, 50, 10, 5, 1};
 	}
 ```
 
-## :bulb: 회전변환행렬 (Rotation Matrix)
+## :mega: 회전변환행렬 (Rotation Matrix)
 
 <p align="center">
 	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Matrix-font-linear-map001Rota.svg/300px-Matrix-font-linear-map001Rota.svg.png" />
@@ -376,7 +376,11 @@ void anti_rotate(vector<vector<int> > &matrix) {
 }
 ```
 
-## :bulb: 위상 정렬 (Topological Sorting)
+## :mega: 퇴각 검색 (Backtracking, 백트래킹)
+
+* 퇴각검색(영어: backtracking, 한국어: 백트래킹)은 한정 조건을 가진 문제를 풀려는 전략이다. "퇴각검색(backtrack)"이란 용어는 1950년대의 미국 수학자 D. H. 레머가 지었다.
+
+## :mega: 위상 정렬 (Topological Sorting)
 
 * 위상 정렬(topological sorting)은 유향 그래프의 꼭짓점들(vertex)을 변의 방향을 거스르지 않도록 나열하는 것을 의미한다. 위상정렬을 가장 잘 설명해 줄 수 있는 예로 대학의 선수과목(prerequisite) 구조를 예로 들 수 있다. 만약 특정 수강과목에 선수과목이 있다면 그 선수 과목부터 수강해야 하므로, 특정 과목들을 수강해야 할 때 위상 정렬을 통해 올바른 수강 순서를 찾아낼 수 있다. 이와 같이 선후 관계가 정의된 그래프 구조 상에서 선후 관계에 따라 정렬하기 위해 위상 정렬을 이용할 수 있다. 정렬의 순서는 유향 그래프의 구조에 따라 여러 개의 종류가 나올 수 있다. 위상 정렬이 성립하기 위해서는 반드시 그래프의 순환이 존재하지 않아야 한다. 즉, 그래프가 비순환 유향 그래프(directed acyclic graph)여야 한다.
 
@@ -458,7 +462,7 @@ void reculsiveDFS(int index, vector<bool> & visit, vector<INT_VECTOR> & student,
 	}
 ```
 
-## :bulb: REFERENCE
+## :mega: REFERENCE
 
 :airplane: [LeetCode](https://leetcode.com/)
 
@@ -489,3 +493,5 @@ void reculsiveDFS(int index, vector<bool> & visit, vector<INT_VECTOR> & student,
 :airplane: [회전변환행렬 (Rotation Matrix) - 위키백과](https://ko.wikipedia.org/wiki/%ED%9A%8C%EC%A0%84%EB%B3%80%ED%99%98%ED%96%89%EB%A0%AC)
 
 :airplane: [위상 정렬 (Topological Sorting) - 위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC)
+
+:airplane: [퇴각 검색 (Backtracking, 백트래킹) -](https://ko.wikipedia.org/wiki/%ED%87%B4%EA%B0%81%EA%B2%80%EC%83%89)
