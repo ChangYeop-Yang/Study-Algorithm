@@ -531,6 +531,46 @@ void reculsiveDFS(int index, vector<bool> & visit, vector<INT_VECTOR> & student,
 	}
 ```
 
+## :mega: 펜윅 트리 (Fenwick)
+
+##### :page_facing_up: [Fenwick Source Code - 구간 ](https://www.acmicpc.net/problem/2042)
+
+```C++
+#define LONG long long
+#define INT_PAIR pair<int, int>
+
+/* 가상의 배열 A[]의 부분 합을 빠르게 구현할 수 있도록 한다. 초기화시에는 A[]의 원소가 전부 0이라 생각한다. */
+typedef struct FenwickTree {
+
+private:
+	vector<LONG> tree;
+
+public:
+	FenwickTree(int n) :tree(n + 1) {}
+
+	// A[0..pos]까지의 부분합을 구한다.
+	const LONG sum(int pos) {
+		LONG ret = 0;
+		while (pos > 0) {
+			ret += tree[pos];
+			pos -= (pos & -pos); // 다음 구간을 찾기 위하여 최종 비트를 지운다.
+		}
+		return ret;
+	}
+
+	// 펜윅 트리 갱신 : A[pos]에 Value를 더한다.
+	void update(int pos, LONG val) {
+		while (pos <= this->tree.size()) { this->tree[pos] += val; pos += (pos & -pos); }
+	}
+
+	// A[pos1..pos2]까지의 부분합을 구한다.
+	const LONG rangeSum(INT_PAIR index) {
+		return this->sum(index.second) - this->sum(index.first - 1);
+	}
+
+} FENWICK;
+```
+
 ## :mega: REFERENCE
 
 :airplane: [LeetCode](https://leetcode.com/)
@@ -563,4 +603,6 @@ void reculsiveDFS(int index, vector<bool> & visit, vector<INT_VECTOR> & student,
 
 :airplane: [위상 정렬 (Topological Sorting) - 위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC)
 
-:airplane: [퇴각 검색 (Backtracking, 백트래킹) -](https://ko.wikipedia.org/wiki/%ED%87%B4%EA%B0%81%EA%B2%80%EC%83%89)
+:airplane: [퇴각 검색 (Backtracking, 백트래킹) - ](https://ko.wikipedia.org/wiki/%ED%87%B4%EA%B0%81%EA%B2%80%EC%83%89)
+
+:airplane: [펜윅 트리 (Fenwick) - 위키백과](https://en.wikipedia.org/wiki/Fenwick_tree)
