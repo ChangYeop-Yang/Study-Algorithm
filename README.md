@@ -603,6 +603,6 @@ public:
 
 :airplane: [위상 정렬 (Topological Sorting) - 위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC)
 
-:airplane: [퇴각 검색 (Backtracking, 백트래킹) - ](https://ko.wikipedia.org/wiki/%ED%87%B4%EA%B0%81%EA%B2%80%EC%83%89)
+:airplane: [퇴각 검색 (Backtracking, 백트래킹) - 위키백과](https://ko.wikipedia.org/wiki/%ED%87%B4%EA%B0%81%EA%B2%80%EC%83%89)
 
 :airplane: [펜윅 트리 (Fenwick) - 위키백과](https://en.wikipedia.org/wiki/Fenwick_tree)
