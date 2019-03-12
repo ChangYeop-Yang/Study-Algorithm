@@ -94,3 +94,64 @@ int main(void)
 
 	return 0;
 }
+
+// FENWICK Tree 방법
+#include <vector>
+#include <cstdio>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+#define LONG long long
+#define INT_PAIR pair<int, int>
+#define DIV 1000000007
+
+/* 가상의 배열 A[]의 부분 합을 빠르게 구현할 수 있도록 한다. 초기화시에는 A[]의 원소가 전부 0이라 생각한다. */
+typedef struct FenwickTree {
+
+private:
+	vector<LONG> tree;
+
+public:
+	FenwickTree(int n) :tree(n + 1) {}
+
+	// A[0..pos]까지의 부분합을 구한다.
+	const LONG sum (int pos) {
+		LONG ret = 0;
+		while (pos > 0) {
+			ret += tree[pos];
+			pos -= (pos & -pos); // 다음 구간을 찾기 위하여 최종 비트를 지운다.
+		}
+		return ret;
+	}
+
+	// 펜윅 트리 갱신 : A[pos]에 Value를 더한다.
+	void update (int pos, LONG val) {
+		while (pos <= this->tree.size()) { this->tree[pos] += val; pos += (pos & -pos); }
+	}
+
+} FENWICK;
+
+int main(void)
+{
+	int n = 0, m = 0, k = 0;
+	cin >> n >> m >> k;
+
+	FenwickTree fenw = FenwickTree(n + 1);
+	vector<LONG> board = vector<LONG>(n + 1);
+	for (int ii = 1; ii <= n; ii++) { cin >> board[ii]; fenw.update(ii, board[ii]); }
+
+	for (int ii = 0; ii < m + k; ii++) {
+
+		LONG q = 0, w = 0, r = 0;
+		cin >> q >> w >> r;
+
+		if (q == 1) {
+			fenw.update(w, r - board[w]);
+			board[w] = r;
+		}
+		else { cout << fenw.sum(r) - fenw.sum(w - 1) << endl; }
+	}
+
+	return 0;
+}
