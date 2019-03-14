@@ -579,36 +579,4 @@ public:
 
 ## :mega: REFERENCE
 
-:airplane: [LeetCode](https://leetcode.com/)
-
-:airplane: [Programmers - ㈜ 그렙](https://www.welcomekakao.com/learn/challenges)
-
-:airplane: [Beakjoon Online Judge - ㈜ STARTLINK](https://www.acmicpc.net/)
-
-:airplane: [2018 SW 역량 테스트 준비 (기초) - Code.Plus](https://code.plus/)
-
-:airplane: [Factorial (계승) - 위키백과](https://ko.wikipedia.org/wiki/%EA%B3%84%EC%8A%B9)
-
-:airplane: [에라토스테네스의 체 - 위키백과](https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4)
-
-:airplane: [최대공약수 - 위키백과](https://ko.wikipedia.org/wiki/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98)
-
-:airplane: [골드바흐의 추측 (Goldbach's conjecture) - 위키백과](https://ko.wikipedia.org/wiki/%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90%EC%9D%98_%EC%B6%94%EC%B8%A1)
-
-:airplane: [무차별 대입 공격 (Brute force attack) - 위키백과](https://ko.wikipedia.org/wiki/%EB%AC%B4%EC%B0%A8%EB%B3%84_%EB%8C%80%EC%9E%85_%EA%B3%B5%EA%B2%A9)
-
-:airplane: [순열 (Permutation) - 나무위키](https://namu.wiki/w/%EC%88%9C%EC%97%B4)
- 
-:airplane: [Mask (computing) - 위키백과](https://en.wikipedia.org/wiki/Mask_(computing))
-
-:airplane: [탐욕 알고리즘 (Greedy Algorithm) - 위키백과](https://ko.wikipedia.org/wiki/%ED%83%90%EC%9A%95_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
-
-:airplane: [회문수 (回文數, Palindromic number) - 위키백과](https://ko.wikipedia.org/wiki/%EB%8C%80%EC%B9%AD%EC%88%98)
-
-:airplane: [회전변환행렬 (Rotation Matrix) - 위키백과](https://ko.wikipedia.org/wiki/%ED%9A%8C%EC%A0%84%EB%B3%80%ED%99%98%ED%96%89%EB%A0%AC)
-
-:airplane: [위상 정렬 (Topological Sorting) - 위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC)
-
-:airplane: [퇴각 검색 (Backtracking, 백트래킹) - 위키백과](https://ko.wikipedia.org/wiki/%ED%87%B4%EA%B0%81%EA%B2%80%EC%83%89)
-
-:airplane: [펜윅 트리 (Fenwick) - 위키백과](https://en.wikipedia.org/wiki/Fenwick_tree)
+:airplane: [Algorithm REFERENCE URL](https://github.com/ChangYeop-Yang/Study-Algorithm/issues/1)
