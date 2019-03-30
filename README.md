@@ -575,6 +575,7 @@ public:
 	}
 
 } FENWICK;
+
 ```
 
 ## :mega: REFERENCE
