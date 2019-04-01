@@ -578,6 +578,62 @@ public:
 
 ```
 
+## :mega: KMP (Knuth–Morris–Pratt Algorithm)
+
+* 컴퓨터 과학에서, 커누스-모리스-프랫 알고리즘(Knuth–Morris–Pratt algorithm)은 문자열 중에 특정 패턴을 찾아내는 문자열 검색 알고리즘의 하나이다. 주먹구구식 알고리즘에서 불필요한 문자간 비교를 없애기 위해 Next 데이터라고 하는 패턴 정보를 활용하여 검색 시간을 단축하는 방식이다.
+
+##### :page_facing_up: [KMP Source Code - 구간 합 구하기](https://www.acmicpc.net/problem/1786)
+
+```C++
+const vector<int> getPartialMatch(const string & first) {
+
+	// MARK: - KMP를 통해 자기 자신을 찾는다. N을 N에서 찾는다. begin = 0이면 자기 자신을 찾아버리니 안됨을 주의한다.
+	int m = first.size(), begin = 1, mached = 0;
+
+	vector<int> pi(m, 0);
+	// MARK: - 비교할 문자가 N의 끝에 도달할 때까지 찾으면서 부분 일치를 모두 기록한다.
+	while (begin + mached < m) {
+		if (first[begin + mached] == first[mached]) { ++mached; pi[begin + mached - 1] = mached; }
+		else {
+			if (mached == 0) { ++begin; } // 찾고자 한 문자열이 아닌 경우 시작점을 바꾸어 준다.
+			else { begin += mached - pi[mached - 1]; mached = pi[mached - 1]; }
+		}
+	}
+
+	return pi;
+}
+
+const vector<int> kmpSearch(const string & first, const string & second) {
+
+	const int n = first.size(), m = second.size();
+
+	vector<int> ret, pi = getPartialMatch(second);
+
+	// MARK: - 현재 대응 된 글자의 수의 값을 저장하는 변수
+	int begin = 0, matched = 0;
+
+	while (begin <= n - m) {
+		// Case 만약 짚더미의 해당 글자가 바늘의 해당 글자와 같은 경우
+		if (matched < m && first[begin + matched] == second[matched]) {
+			matched++;
+			// MARK: - 모든 문자가 찾고자 하는 문자열에 대응 되는 경우
+			if (matched == m) { ret.push_back(begin); }
+		}
+		else {
+			// MARK: - matched가 0인 경우에는 다음 칸에서 부터 계속한다.
+			if (matched == 0) { ++begin; }
+			else {
+				begin += matched - pi[matched - 1];
+				// MARK: - begin을 옮겼다고 처음부터 다시 비교할 필요는 없다. 옮긴 후에도 pi[matched - 1]만큼은 항상 일치한다.
+				matched = pi[matched - 1];
+			}
+		}
+	}
+
+	return ret;
+}
+```
+
 ## :mega: REFERENCE
 
 :airplane: [Algorithm REFERENCE URL](https://github.com/ChangYeop-Yang/Study-Algorithm/issues/1)
