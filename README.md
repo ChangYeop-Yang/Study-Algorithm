@@ -582,7 +582,7 @@ public:
 
 * 컴퓨터 과학에서, 커누스-모리스-프랫 알고리즘(Knuth–Morris–Pratt algorithm)은 문자열 중에 특정 패턴을 찾아내는 문자열 검색 알고리즘의 하나이다. 주먹구구식 알고리즘에서 불필요한 문자간 비교를 없애기 위해 Next 데이터라고 하는 패턴 정보를 활용하여 검색 시간을 단축하는 방식이다.
 
-##### :page_facing_up: [KMP Source Code - 구간 합 구하기](https://www.acmicpc.net/problem/1786)
+##### :page_facing_up: [KMP Source Code - 찾기](https://www.acmicpc.net/problem/1786)
 
 ```C++
 const vector<int> getPartialMatch(const string & first) {
