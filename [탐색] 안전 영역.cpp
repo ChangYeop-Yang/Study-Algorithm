@@ -10,7 +10,6 @@ int Queue[SIZE2][2];
  
 int main(void)
 {
-    /* Integer */
     int x = 0, Count = 0, Max[2] = { 0, 0 };
     
     /* 배열 크기 입력 */
