@@ -25,6 +25,7 @@ int main()
 		printf("%d\n", Select()); /* 출력 */
 	return 0;	/* 반드시 return 0으로 해주셔야합니다. */
 }
+
 void Init() /* 초기화 */
 {
 	int _Count[2] = { 0, 0 };
@@ -32,6 +33,7 @@ void Init() /* 초기화 */
 	for (_Count[0] = 0; _Count[0] < SIZE; _Count[0]++)
 	{ for (_Count[1] = 0; _Count[1] < SIZE; _Count[1]++) { _Arr1[_Count[0]][_Count[1]] = 0; } }
 }
+
 void Full(int X, int Y) /* 색 체우기 */
 {
 	int _Count[2] = { 0, 0 };
@@ -44,6 +46,7 @@ void Full(int X, int Y) /* 색 체우기 */
 		{ _Arr1[_Count[0]][_Count[1]] = 'A'; } 
 	}
 }
+
 int Select()
 {
 	int _Count[2] = { 0, 0 };
