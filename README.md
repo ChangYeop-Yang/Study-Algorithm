@@ -618,6 +618,10 @@ int main(void)
 } 
 ```
 
+## 📣 [LZW (Lempel-Ziv-Welch)](https://ko.wikipedia.org/wiki/LZW)
+
+* LZW(Lempel-Ziv-Welch)는 아브라함 렘펠과 제콥 지브, 테리 웰치가 만든 공통 비손실 데이터 압축 알고리즘이다. 1978년에 렘펠과 지브가 공개한 LZ78 알고리즘의 개선판을 웰치에 의해 1984년에 공개하였다. 이 알고리즘은 빠른 이식을 위해 고안되었지만 데이터의 제한된 분석만 수행하기 때문에 그리 최적으로 동작하지는 않는다. Huffman의 아이디어에서 조금 더 응용된 형태이다.
+
 ## :mega: KMP (Knuth–Morris–Pratt Algorithm)
 
 * 컴퓨터 과학에서, '커누스-모리스-프랫 알고리즘(Knuth–Morris–Pratt algorithm)'은 문자열 중에 특정 패턴을 찾아내는 문자열 검색 알고리즘의 하나이다. 주먹구구식 알고리즘에서 **불필요한 문자간 비교를 없애기 위해 Next 데이터라고 하는 패턴 정보를 활용하여 검색 시간을 단축하는 방식**이다.
